@@ -1,0 +1,51 @@
+class Scratch {
+
+    public static void main(String[] args) {
+    log("This is the 'main' method");
+
+    myNewMethod();
+    greetPerson("Beck");
+    greetPerson("Moo");
+    greetPerson("Yo");
+    combineNames("Beck", "Nicko");
+    String myFetchedFullName = getFullName("Moo", "Mooo MOOO");
+    log(myFetchedFullName);
+
+    int result = addNumbers(12,18);
+    log(result);
+    }
+
+//This is how to write a new method.
+    static void myNewMethod() {
+        log("This is the my new method");
+
+    }
+// This is a method with a parameter. We can use the parameter as a variable in this method.
+    static void greetPerson(String name){
+        log( "Hello" + name);
+
+    }
+
+    // This is a method with multiple parameters.
+    static void combineNames(String firstName, String lastName){
+        String combineNames = firstName + " " + lastName;
+        log( "Well hello there " + combineNames);
+    }
+
+    //This is a method with a return value; it returns a String
+    static String getFullName(String firstName, String lastName){
+        return firstName + " " + lastName;
+
+    }
+//methods can have any type of parameter and return value. This uses type 'int'
+    static int addNumbers(int firstNumber, int secondNumber) {
+        return firstNumber + secondNumber;
+
+    }
+
+    static void log (Object anything) {
+        System.out.println(anything);
+
+
+    }
+}
