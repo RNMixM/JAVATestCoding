@@ -1,0 +1,76 @@
+import java.util.Scanner;
+
+class Scratch {
+    public static void main(String[] args) {
+
+        int solution = 6;
+
+
+
+        System.out.println("Guess a number that is between 1 and 10, you Cheeseball!");
+        Scanner userInputScanner = new Scanner(System.in);
+        takeAGuess(solution, userInputScanner);
+    }
+
+    static void takeAGuess(int solution, Scanner userInputScanner) {
+            int guess = userInputScanner.nextInt();
+            int nonsolution1 = 1;
+            int nonsolution2 = 2;
+            int nonsolution3 = 3;
+            int nonsolution4 = 4;
+            int nonsolution5 = 5;
+            int nonsolution7 = 7;
+            int nonsolution8 = 8;
+            int nonsolution9 = 9;
+            int nonsolution10 = 10;
+
+            if (guess == solution) {
+                System.out.println("You guess the number! YAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAY!!!!!");
+            }
+            if (guess == nonsolution3) {
+                System.out.println("You suck!!!!!");
+                takeAGuess(solution, userInputScanner);
+            }
+            if (guess == nonsolution1) {
+                System.out.println("Rubbish!!!!!");
+                takeAGuess(solution, userInputScanner);
+            }
+            if (guess == nonsolution2) {
+                System.out.println("You lose!");
+                takeAGuess(solution, userInputScanner);
+            }
+            if (guess == nonsolution4) {
+                System.out.println("BOOOOOOOOOOOOOOOOOM!!!!");
+                takeAGuess(solution, userInputScanner);
+            }
+            if (guess == nonsolution5) {
+                System.out.println("Is that the best you can do?");
+                takeAGuess(solution, userInputScanner);
+            }
+            if (guess == nonsolution7) {
+                System.out.println("The cookies are mine!");
+                takeAGuess(solution, userInputScanner);
+            }
+            if (guess == nonsolution8) {
+                System.out.println("Blaaaah Blaaaah Blaaaaah! Guess again!");
+                takeAGuess(solution, userInputScanner);
+            }
+            if (guess == nonsolution9) {
+                System.out.println(":(");
+                takeAGuess(solution, userInputScanner);
+            }
+            if (guess == nonsolution10) {
+                System.out.println("No Doge for you!");
+                takeAGuess(solution, userInputScanner);
+            }
+            else if (guess > 10) {
+                System.out.println("Your number is over 10, moron!");
+                takeAGuess(solution, userInputScanner);
+            }
+
+
+        }
+
+
+
+}
