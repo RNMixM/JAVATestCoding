@@ -1,0 +1,95 @@
+class Scratch {
+    public static void main(String[] args) {
+    Car jalopy = new Car("Buick Century");
+
+    jalopy.describeVehicle();
+    jalopy.start();
+    jalopy.beepHorn();
+    jalopy.stop();
+
+    Plane bigPlane = new Plane(true);
+    bigPlane.describeVehicle();
+    bigPlane.start();
+    bigPlane.fly();
+    bigPlane.stop();
+
+    }
+}
+
+class Vehicle{
+    String name;
+    int numberOfWheels;
+    boolean canFly;
+
+    void describeVehicle() {
+        System.out.println("VEHICLE DETAILS: Name: " + name + ", Number of Wheels: " + numberOfWheels + ", Capable of Flight: " + canFly);
+    }
+
+    void start() {
+        System.out.println("<Engine Blows UP! BOOOM!>");
+    }
+    void stop() {
+        System.out.println("<Engine stops?>");
+    }
+}
+
+class Car extends Vehicle {
+    String model;
+
+    Car(String model) {
+        this.name = "Piece 'O' Junk";
+        this.numberOfWheels = 0;
+        this.canFly = false;
+        this.model = model;
+    }
+
+    @Override
+    void describeVehicle() {
+        super.describeVehicle();
+        System.out.println("CAR DETAILS: MODEL: " + model);
+
+
+    }
+
+    void beepHorn() {
+        System.out.println("BEEEEEEEEEEP!");
+    }
+
+}
+
+class Plane extends Vehicle {
+    boolean hasPropellers;
+
+    Plane(boolean hasPropellers) {
+        this.name = "Plane";
+        this.numberOfWheels = 3;
+        this.canFly = true;
+        this.hasPropellers = hasPropellers;
+    }
+
+    @Override
+    void describeVehicle() {
+        super.describeVehicle();
+        System.out.println("PLANE DETAILS: HAS PROPELLERS: " + hasPropellers);
+    }
+
+    @Override
+    void start() {
+        super.start();
+        if (hasPropellers) {
+            System.out.println("<Propellers Started>");
+        }
+    }
+
+    @Override
+    void stop() {
+        super.stop();
+        if (hasPropellers) {
+            System.out.println("<Propellers Stopped>");
+        }
+    }
+
+    void fly() {
+        System.out.println("Huuuummmmmmmmmm!");
+    }
+}
