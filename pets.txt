@@ -1,0 +1,81 @@
+class Scratch {
+    public static void main(String[] args) {
+        Animal myAnimal = new Animal();
+        myAnimal.name = "Moooo Mooo";
+        myAnimal.type = "Cow";
+        myAnimal.noise = "MoOoOoOoOoOoOoOoOoOo";
+
+        myAnimal.sayHello();
+        myAnimal.makeNoise();
+        myAnimal.sleep();
+
+        Dog myDog = new Dog();
+        myDog.name = "Fuzzball";
+        myDog.type = "Samoyed";
+        myDog.noise = "WOOF WOOF!";
+        myDog.barkVolume = 8;
+
+        Cat squeaksTheCat = new Cat();
+        squeaksTheCat.name = "Squeaks";
+        squeaksTheCat.type = "Cat";
+        squeaksTheCat.noise = "MEEEEOW!";
+        squeaksTheCat.meowVolume = 10;
+        squeaksTheCat.likesToScratch = true;
+
+        squeaksTheCat.sayHello();
+        squeaksTheCat.makeNoise();
+        squeaksTheCat.sleep();
+        squeaksTheCat.nagForFood();
+
+
+        myDog.sayHello();
+        myDog.makeNoise();
+        myDog.sleep();
+        myDog.wagTail();
+
+    }
+
+
+}
+
+class Animal {
+    String name;
+    String type;
+    String noise;
+
+    void sayHello () {
+        System.out.println("Hello, my name is " + name + ". I am a " + type + "!");
+    }
+
+    void makeNoise() {
+        System.out.println(noise);
+    }
+
+    void sleep() {
+        System.out.println("ZzZzZzZzZzZzzzzz -_-");
+    }
+
+}
+
+//The 'Dog" class takes all of the attributes from the 'Animal' class fields and methods and is able to EXTEND (or inherit) them.
+class Dog extends Animal {
+    //We get all of the animal fields, and we add a specific one to Dogs.
+    int barkVolume;
+    //We get all of the animal methods, and we add a specific method to Dogs.
+    void wagTail() {
+        System.out.println(noise + "Look how happy I am! <wag wag>");
+    }
+}
+
+class Cat extends Animal {
+    int meowVolume;
+
+    boolean likesToScratch = true;
+    void nagForFood() {
+        if (likesToScratch) {
+            System.out.println(noise +" <scratches leg> FEED ME, SILLY HOOMAN!");
+        } else {
+            System.out.println(noise + " <taps paw on your face> Feed me!");
+        }
+    }
+}
