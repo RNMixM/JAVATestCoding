@@ -1,0 +1,70 @@
+class Scratch {
+    public static void main(String[] args) {
+    Teacher mrsJones = new Teacher("Mrs. Jones", 32, 23292, "Math");
+    System.out.println(mrsJones);
+    mrsJones.performDuties();
+    mrsJones.recordAttendance("Present ");
+
+    Student cheese = new Student("Little Cheese", 8, 29650);
+    System.out.println(cheese);
+    cheese.performDuties();
+    cheese.recordAttendance("Late ");
+    }
+
+}
+
+abstract class Person {
+    String name;
+    String role;
+    int age;
+
+    Person(String name, String role, int age) {
+        this.name = name;
+        this.role = role;
+        this.age = age;
+    }
+
+    @Override
+    public String toString() {
+        return "Name: " +name + ", Age: " + age;
+
+    }
+
+    void recordAttendance (String attendanceStatus) {
+        System.out.print("ATTENDANCE RECORDED: " +attendanceStatus);
+    }
+
+    abstract void performDuties();
+}
+
+class Teacher extends Person {
+
+    int employeeId;
+    String subject;
+
+    public Teacher(String name, int age, int employeeId, String subject) {
+        super(name, "Teacher", age);
+        this.employeeId = employeeId;
+        this.subject = subject;
+    }
+
+    @Override
+    void performDuties() {
+        System.out.println("<Teaches: " + subject + ">");
+    }
+}
+
+class Student extends Person {
+
+    int studentId;
+
+    public Student(String name, int age, int studentId) {
+        super(name, "Student", age);
+        this.studentId = studentId;
+    }
+
+    @Override
+    void performDuties() {
+        System.out.println("<Studies...>");
+    }
+}
