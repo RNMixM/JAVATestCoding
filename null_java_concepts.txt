@@ -1,0 +1,42 @@
+class Scratch {
+
+    //In Java, when we declare a variable but don't assign an initial value, by default it will be 'null'
+    static Dog myDog;
+    static String aNullString;
+
+// 'Primitive' data types cannot be null. They always have a default value.
+// We've seen some of these 'primitive types e.g. int, double, float, boolean etc.
+
+    static int myIntVariable;
+
+    public static void main(String[] args) {
+        // myDog.name = "Fido"; -> There will be no error in our code, but this will throw an Exception (error) when it runs
+        //myDog.bark();
+
+        myDog = new Dog();
+        myDog.name = "Fuzz Ball";
+        myDog.bark();
+        System.out.println("The dog's name is " + myDog.name);
+
+        myDog = null;
+        // myDog.bark(); -> This will throw an exception because now myDog is null again.
+
+        System.out.println(aNullString);
+        // aNullString.toUpperCase(); -> We can't call a method on a null string.
+
+        System.out.println(myIntVariable);
+
+    }
+
+
+}
+
+class Dog {
+    String name;
+
+    public void bark() {
+        System.out.println("Woof Woof!");
+
+    }
+
+}
